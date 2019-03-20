@@ -16,7 +16,7 @@ class CidadesRepository
         $model = $this->model->select('*')
         ->from('cidade')
         ->where('uf', $cidadeUf)
-        ->first();
+        ->get();
 
         if( is_null($model) ) {
             abort(404, "Não encontrado");
