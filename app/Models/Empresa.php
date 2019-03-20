@@ -10,7 +10,9 @@ class Empresa extends Model
     
     protected $fillable = [
         'cnpj',
-        'nome',
+        'nomeEmpresa',
+        'cpfProprietario',
+        'nomeProprietario',
         'telefone',
         'email'
     ];
@@ -22,5 +24,10 @@ class Empresa extends Model
     public function enderecos()
     {
         return $this->hasMany(Endereco::class);
+    }
+
+    public function produtos()
+    {
+        return $this->hasMany(Produto::class);
     }
 }
