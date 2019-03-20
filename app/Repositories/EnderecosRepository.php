@@ -41,7 +41,7 @@ class EnderecosRepository extends AbstractRepository
             'cidade.id'
         )
         ->where('endereco.empresa_id', $empresaId)
-        ->first();
+        ->get();
 
         if( is_null($model) ) {
             abort(404, "Não encontrado");
