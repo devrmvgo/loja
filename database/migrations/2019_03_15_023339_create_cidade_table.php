@@ -14,7 +14,7 @@ class CreateCidadeTable extends Migration
     public function up()
     {
         Schema::create('cidade', function (Blueprint $table) {
-            $table->bigIncrements('id')->unique();
+            $table->bigIncrements('id');
             $table->string('nome', 200);
             $table->string('uf', 2);
             $table->integer('cod_ibge');
