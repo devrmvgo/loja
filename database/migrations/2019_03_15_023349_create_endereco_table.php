@@ -20,7 +20,7 @@ class CreateEnderecoTable extends Migration
             $table->string('logradouro_complemento', 100)->nullable();
             $table->string('bairro', 100);
             $table->string('cep', 9);
-            $table->integer('cidade_id')->nullable();
+            $table->integer('cidade_id');
             $table->foreign('cidade_id')
             ->references('id')
             ->on('cidade');
