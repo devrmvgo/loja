@@ -30,5 +30,13 @@ Route::put('/enderecos/{id}', 'EnderecosController@update');
 Route::put('/enderecos/ativo/{id}', 'EnderecosController@updateAtivo');
 Route::delete('/enderecos/{id}','EnderecosController@delete');
 
+//--------------------PRDUTOS-----------------------------
+Route::post('/empresas/produtos/{id}', 'ProdutosController@createByEmpresaId');
+Route::get('/produtos', 'ProdutosController@list');
+Route::get('/empresas/produtos/{id}', 'ProdutosController@listByEmpresaId');
+Route::put('/produtos/{id}', 'ProdutosController@update');
+Route::put('/produtos/ativo/{id}', 'ProdutosController@updateAtivo');
+Route::delete('/produtos/{id}','ProdutosController@delete');
+
 
 
