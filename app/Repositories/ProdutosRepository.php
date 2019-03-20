@@ -18,7 +18,6 @@ class ProdutosRepository extends AbstractRepository
         $model->fill($data);
         $model->empresa_id = $empresaId;
         $model->save();
-        
         return $model;
     }
 
