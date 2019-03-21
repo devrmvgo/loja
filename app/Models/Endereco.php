@@ -17,11 +17,6 @@ class Endereco extends Model
         'cidade_id'
     ];
 
-    public function empresa()
-    {
-        return $this->belongsTo(Empresa::class);
-    }
-
     public function cidade()
     {
         return $this->belongsTo(Cidade::class);
