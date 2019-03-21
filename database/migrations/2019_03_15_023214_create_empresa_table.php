@@ -15,7 +15,7 @@ class CreateEmpresaTable extends Migration
     {
         Schema::create('empresa', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('cnpj', 20);
+            $table->string('cnpj', 20)->unique();
             $table->string('nomeEmpresa', 200);
             $table->string('cpfProprietario', 15);
             $table->string('nomeProprietario', 200);
