@@ -61,18 +61,5 @@ class ProdutosController extends Controller
             'message' => 'Estado alterado com sucesso'
         ]);
     }
-
-    public function delete($id){
-        $this->produtoService->delete($id);
-        return response()->json([
-            'message' => 'Dados apagados com sucesso'
-        ]);
-    }
-
-    public function deleteByEmpresaId($empresaId){
-        $this->produtoService->deleteByEmpresaId($empresaId);
-        return response()->json([
-            'message' => 'Dados apagados com sucesso'
-        ]);
-    }
+    
 }

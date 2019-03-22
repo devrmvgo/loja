@@ -42,12 +42,4 @@ class ProdutosRepository extends AbstractRepository
         $model->save();
     }
 
-    public function deleteByEmpresaId($empresaId)
-    {
-        $model = $this->model->select('endereco')
-        ->where('empresa_id', $empresaId);
-        $model->delete();
-        return $model;
-    }
-
 }

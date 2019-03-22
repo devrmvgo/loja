@@ -38,14 +38,4 @@ class ProdutosService
         return $this->produtoRepository->updateAtivo($id, $data);
     }
 
-    public function delete($id)
-    {
-        return $this->produtoRepository->delete($id);
-    }
-
-    public function deleteByEmpresaId($empresaId)
-    {
-        return $this->produtoRepository->deleteByEmpresaId($empresaId);
-    }
-
 }
