@@ -47,14 +47,4 @@ abstract class AbstractRepository
         return $model;
     }
 
-    public function delete($id)
-    {
-        $model = $this->model->find($id);
-        if( is_null($model) ) {
-            abort(404, "Não encontrado");
-        }
-        $model->delete();
-        return $model;
-    }
-
 }
