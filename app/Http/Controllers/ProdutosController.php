@@ -62,4 +62,13 @@ class ProdutosController extends Controller
         ]);
     }
     
+    public function updateAtivoByEmpresaId($empresaId)
+    {
+        $data = \Request::json()->all();
+        $this->produtoService->updateAtivoByEmpresaId($empresaId, $data);
+        return response()->json([
+            'message' => 'Estado alterado com sucesso'
+        ]);
+    }
+
 }

@@ -38,4 +38,9 @@ class ProdutosService
         return $this->produtoRepository->updateAtivo($id, $data);
     }
 
+    public function updateAtivoByEmpresaId($empresaId, $data)
+    {
+        return $this->produtoRepository->updateAtivoByEmpresaId($empresaId, $data);
+    }
+
 }

@@ -24,7 +24,6 @@ class ProdutosRepository extends AbstractRepository
     public function listByEmpresaId($empresaId)
     {
         $model = $this->model->select('*')
-        ->from('produto')
         ->where('empresa_id', $empresaId)
         ->get();
 
@@ -40,6 +39,18 @@ class ProdutosRepository extends AbstractRepository
         $model = $this->model->findOrFail($id);
         $model->ativo = $data['ativo'];
         $model->save();
+    }
+
+    public function updateAtivoByEmpresaId($empresaId, $data)
+    {
+        $produtos = $this->model->select('*')
+        ->where('empresa_id', $empresaId)
+        ->get();
+
+        foreach ($produtos as $model) {
+            $model->ativo = $data['ativo'];
+            $model->save();
+        }
     }
 
 }
