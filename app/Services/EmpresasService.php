@@ -41,15 +41,4 @@ class EmpresasService
         return $this->empresaRepository->updateAtivo($id, $data);
     }
 
-    public function delete($empresaId)
-    {
-        DB::transaction(function () use ($empresaId) {
-            $enderecoService = \App::make(EnderecosService::class);
-            $enderecoService->deleteByEmpresaId($empresaId);
-            $empresa =  $this->empresaRepository->delete($empresaId);
-            return $empresa;
-
-        });
-    }
-
 }

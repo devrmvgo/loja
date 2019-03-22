@@ -52,11 +52,4 @@ class EmpresasController extends Controller
         ]);
     }
 
-    public function delete($id){
-        $this->empresaService->delete($id);
-        return response()->json([
-            'message' => 'Dados apagados com sucesso'
-        ]);
-    }
-
 }
