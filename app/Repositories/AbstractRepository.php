@@ -21,9 +21,16 @@ abstract class AbstractRepository
         return $model;
     }
 
-    public function list()
-    {
-        return $this->model->all();
+    public function list(){
+        $model = $this->model->select('*')
+        ->where('ativo', true)
+        ->get();
+
+        if( is_null($model) ) {
+            abort(404, "Não encontrado");
+        }
+
+        return $model;
     }
 
     public function listById($id)
