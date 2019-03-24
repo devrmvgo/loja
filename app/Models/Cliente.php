@@ -25,4 +25,9 @@ class Cliente extends Model
         return $this->hasMany(Endereco::class);
     }
 
+    public function empresas()
+    {
+        return $this->hasMany(Empresa::class);
+    }
+
 }
