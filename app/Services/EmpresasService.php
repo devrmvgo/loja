@@ -22,7 +22,6 @@ class EmpresasService
             $enderecoService = \App::make(EnderecosService::class);
             $enderecoService->createByEmpresaId($empresa->id, $data['endereco']);
             return $empresa;
-
         });
     }
 
