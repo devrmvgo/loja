@@ -18,9 +18,19 @@ class EnderecosService
         return $this->enderecoRepository->createByEmpresaId($empresaId, $data);
     }
 
+    public function createByClienteId($clienteId, $data)
+    {
+        return $this->enderecoRepository->createByClienteId($clienteId, $data);
+    }
+
     public function listByEmpresaId($empresaId)
     {
         return $this->enderecoRepository->listByEmpresaId($empresaId);
+    }
+
+    public function listByClienteId($clienteId)
+    {
+        return $this->enderecoRepository->listByCLienteId($clienteId);
     }
 
     public function update($id, $data)
@@ -33,14 +43,14 @@ class EnderecosService
         return $this->enderecoRepository->updateAtivo($id, $data);
     }
 
-    public function delete($id)
+    public function updateAtivoByEmpresaId($empresaId, $data)
     {
-        return $this->enderecoRepository->delete($id);
+        return $this->enderecoRepository->updateAtivoByEmpresaId($empresaId, $data);
     }
 
-    public function deleteByEmpresaId($empresaId)
+    public function updateAtivoByClienteId($clienteId, $data)
     {
-        return $this->enderecoRepository->deleteByEmpresaId($empresaId);
+        return $this->enderecoRepository->updateAtivoByClienteId($clienteId, $data);
     }
 
 }

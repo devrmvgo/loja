@@ -38,7 +38,17 @@ class EmpresasService
 
     public function updateAtivo($id, $data)
     {
-        return $this->empresaRepository->updateAtivo($id, $data);
+        DB::transaction(function () use ($id, $data) {
+            $enderecoService = \App::make(EnderecosService::class);
+            $enderecoService->updateAtivoByEmpresaId($id, $data);
+            $produtoService = \App::make(ProdutosService::class);
+            $produtoService->updateAtivoByEmpresaId($id, $data);
+            $clienteService = \App::make(ClientesService::class);
+            $clienteService->updateAtivoByEmpresaId($id, $data);
+            $empresa =  $this->empresaRepository->updateAtivo($id, $data);
+            return $empresa;
+
+        });
     }
 
 }

@@ -25,9 +25,27 @@ class EnderecosController extends Controller
         ]);
     }
 
+    public function createByClienteId($clienteId)
+    {
+        $data = \Request::json()->all();
+        $this->enderecoService->createByClienteId($clienteId, $data);
+        return response()->json([
+            'message' => 'Dados salvos com sucesso!'
+        ]);
+    }
+
     public function listByEmpresaId($empresaId)
     {
         $data = $this->enderecoService->listByEmpresaId($empresaId);
+        return response()->json([
+            'data' => $data->toArray(),
+            'total' => $data->count()
+        ]);
+    }
+
+    public function listByClienteId($clienteId)
+    {
+        $data = $this->enderecoService->listByClienteId($clienteId);
         return response()->json([
             'data' => $data->toArray(),
             'total' => $data->count()
@@ -52,17 +70,21 @@ class EnderecosController extends Controller
         ]);
     }
 
-    public function delete($id){
-        $this->enderecoService->delete($id);
+    public function updateAtivoByEmpresaId($empresaId)
+    {
+        $data = \Request::json()->all();
+        $this->enderecoService->updateAtivoByEmpresaId($empresaId, $data);
         return response()->json([
-            'message' => 'Dados apagados com sucesso'
+            'message' => 'Estado alterado com sucesso'
         ]);
     }
 
-    public function deleteByEmpresaId($empresaId){
-        $this->enderecoService->deleteByEmpresaId($empresaId);
+    public function updateAtivoByClienteId($clienteId)
+    {
+        $data = \Request::json()->all();
+        $this->enderecoService->updateAtivoByClienteId($clienteId, $data);
         return response()->json([
-            'message' => 'Dados apagados com sucesso'
+            'message' => 'Estado alterado com sucesso'
         ]);
     }
 

@@ -30,4 +30,10 @@ class Empresa extends Model
     {
         return $this->hasMany(Produto::class);
     }
+
+    public function clientes()
+    {
+        return $this->hasMany(Cliente::class);
+    }
+
 }
