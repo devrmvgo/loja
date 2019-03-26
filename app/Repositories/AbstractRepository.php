@@ -33,6 +33,17 @@ abstract class AbstractRepository
         return $model;
     }
 
+    public function listAll(){
+        $model = $this->model->select('*')
+        ->get();
+
+        if( is_null($model) ) {
+            abort(404, "Não encontrado");
+        }
+
+        return $model;
+    }
+
     public function listById($id)
     {
         return $this->model->find($id);
