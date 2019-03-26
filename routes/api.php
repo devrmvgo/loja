@@ -26,7 +26,7 @@ Route::options('/cidades/{uf}', 'CidadesController@listCidadesByUf');
 Route::post('/empresas/enderecos/{id}', 'EnderecosController@createByEmpresaId');
 Route::post('/clientes/enderecos/{id}', 'EnderecosController@createByClienteId');
 Route::get('/empresas/enderecos/{id}', 'EnderecosController@listByEmpresaId');
-Route::get('/clientes/enderecos/{id}', 'EnderecosController@listByCLienteId');
+Route::get('/clientes/enderecos/{id}', 'EnderecosController@listByClienteId');
 Route::put('/enderecos/{id}', 'EnderecosController@update');
 Route::put('/enderecos/ativo/{id}', 'EnderecosController@updateAtivo');
 Route::put('/empresas/enderecos/ativo/{id}', 'EnderecosController@updateAtivoByEmpresaId');
@@ -48,4 +48,11 @@ Route::put('/clientes/{id}', 'ClientesController@update');
 Route::put('/clientes/ativo/{id}', 'ClientesController@updateAtivo');
 Route::put('/empresas/clientes/ativo/{id}', 'ClientesController@updateAtivoByEmpresaId');
 
+//--------------------COMPRAS------------------------------
+Route::post('/clientes/compras/{id}', 'ComprasController@createByClienteId');
+Route::get('/clientes/compras/{id}', 'ComprasController@listByClienteId');
+Route::put('/compras/{id}', 'ComprasController@update');
 
+//--------------------COMPRAS-ITENS------------------------------
+Route::post('/compras/itens/{id}', 'ComprasItensController@createByCompraId');
+Route::get('/compras/itens/{id}', 'ComprasItensController@listByCompraId');
