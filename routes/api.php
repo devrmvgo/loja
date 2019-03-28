@@ -56,3 +56,7 @@ Route::put('/compras/{id}', 'ComprasController@update');
 //--------------------COMPRAS-ITENS------------------------------
 Route::post('/compras/itens/{id}', 'ComprasItensController@createByCompraId');
 Route::get('/compras/itens/{id}', 'ComprasItensController@listByCompraId');
+
+//--------------------RELATORIOS FINANCEIROS------------------------------
+Route::post('/empresas/relatoriosFin/{id}', 'RelatoriosFinanceirosController@createByEmpresaId');
+Route::get('/empresas/relatoriosFin/{id}', 'RelatoriosFinanceirosController@listByEmpresaId');
