@@ -36,4 +36,9 @@ class Empresa extends Model
         return $this->hasMany(Cliente::class);
     }
 
+    public function relatoriosFinanceiros()
+    {
+        return $this->hasMany(RelatorioFinanceiro::class);
+    }
+
 }
