@@ -13,9 +13,9 @@ class RelatoriosFinanceirosService
         $this->relatorioFinanceiroRepository = $relatorioFinanceiroRepository;
     }
 
-    public function createByEmpresaId($empresaId)
+    public function create()
     {
-        return $this->relatorioFinanceiroRepository->createByEmpresaId($empresaId);
+        return $this->relatorioFinanceiroRepository->create();
     }
 
     public function listByEmpresaId($empresaId)
@@ -23,4 +23,8 @@ class RelatoriosFinanceirosService
         return $this->relatorioFinanceiroRepository->listByEmpresaId($empresaId);
     }
 
+    public function pdfByEmpresaId($empresaId)
+    {
+        return $this->relatorioFinanceiroRepository->pdfByEmpresaId($empresaId);
+    }
 }

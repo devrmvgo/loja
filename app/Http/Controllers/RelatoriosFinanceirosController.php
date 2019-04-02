@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Services\RelatoriosFinanceirosService;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class RelatoriosFinanceirosController extends Controller
 {
@@ -16,12 +17,11 @@ class RelatoriosFinanceirosController extends Controller
     }
 
 
-    public function createByEmpresaId($empresaId)
+    public function create()
     {
-        
-        $this->relatorioFinanceiroService->createByEmpresaId($empresaId);
+        $this->relatorioFinanceiroService->create();
         return response()->json([
-            'message' => 'Dados salvos com sucesso!'
+            'message' => 'Relatorios Gerados com sucesso!'
         ]);
     }
 
@@ -34,4 +34,10 @@ class RelatoriosFinanceirosController extends Controller
         ]);
     }
 
+    public function pdfByEmpresaId($empresaId)
+    {
+        $data = $this->relatorioFinanceiroService->pdfByEmpresaId($empresaId);
+        return PDF::loadHTML($data)
+            ->stream();
+    }
 }
