@@ -58,5 +58,6 @@ Route::post('/compras/itens/{id}', 'ComprasItensController@createByCompraId');
 Route::get('/compras/itens/{id}', 'ComprasItensController@listByCompraId');
 
 //--------------------RELATORIOS FINANCEIROS------------------------------
-Route::post('/empresas/relatoriosFin/{id}', 'RelatoriosFinanceirosController@createByEmpresaId');
-Route::get('/empresas/relatoriosFin/{id}', 'RelatoriosFinanceirosController@listByEmpresaId');
+Route::post('/empresas/relatoriosFin', 'RelatoriosFinanceirosController@create');
+Route::get('/empresas/relatoriosFinanceiros/{id}', 'RelatoriosFinanceirosController@listByEmpresaId');
+Route::get('/empresas/relatoriosFinanceiros/pdf/{id}', 'RelatoriosFinanceirosController@pdfByEmpresaId');
