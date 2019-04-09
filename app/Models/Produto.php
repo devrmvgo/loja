@@ -11,7 +11,8 @@ class Produto extends Model
     protected $fillable = [
         'nome',
         'preco',
-        'descricao'
+        'descricao',
+        'qntd'
     ];
 
     public function empresa()
