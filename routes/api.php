@@ -32,7 +32,7 @@ Route::put('/enderecos/ativo/{id}', 'EnderecosController@updateAtivo');
 Route::put('/empresas/enderecos/ativo/{id}', 'EnderecosController@updateAtivoByEmpresaId');
 Route::put('/clientes/enderecos/ativo/{id}', 'EnderecosController@updateAtivoByCLienteId');
 
-//--------------------PRDUTOS-----------------------------
+//--------------------PRODUTOS-----------------------------
 Route::post('/empresas/produtos/{id}', 'ProdutosController@createByEmpresaId');
 Route::get('/produtos', 'ProdutosController@list');
 Route::get('/empresas/produtos/{id}', 'ProdutosController@listByEmpresaId');
