@@ -18,6 +18,7 @@ class CreateProdutoTable extends Migration
             $table->string('nome', 200);
             $table->double('preco');
             $table->string('descricao', 500);
+            $table->integer('qntd');
             $table->boolean('ativo')->default(true);
             $table->integer('empresa_id');
             $table->foreign('empresa_id')
